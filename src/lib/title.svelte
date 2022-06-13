@@ -14,6 +14,7 @@
 
 	.title img {
 		display: inline-block;
+		filter: invert(88%) sepia(18%) saturate(886%) hue-rotate(199deg) brightness(100%) contrast(90%);
 	}
 
 	.title h1 {
