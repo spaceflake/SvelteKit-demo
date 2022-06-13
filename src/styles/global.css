@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html,
+body,
+div:first-child {
+	height: 100%;
+}
+
+body > div:first-child {
+	display: flex;
+	flex-direction: column;
+}
+
+body {
+	background: #422d5d;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+li {
+	color: #decff1;
+	font-family: 'VT323', monospace;
+	font-weight: normal;
+}
