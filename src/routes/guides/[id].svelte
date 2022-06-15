@@ -1,5 +1,7 @@
 <script lang="ts" context="module">
+	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ fetch, params }: any) {
+		// await new Promise((resolve) => setTimeout(resolve, 1000));
 		const id = params.id;
 		const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
 		const guide = await res.json();
@@ -13,8 +15,10 @@
 		}
 
 		return {
-			status: res.status,
-			error: new Error('No guide found')
+			// status: res.status,
+			// error: new Error('No guide found')
+			status: 301,
+			redirect: '/guides'
 		};
 	}
 </script>
