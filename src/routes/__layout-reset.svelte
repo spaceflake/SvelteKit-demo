@@ -6,7 +6,7 @@
 
 <header>
 	<nav>
-		<Title title="Game Guides" />
+		<Title title="Spaceflake Game Guides" />
 		<div class="links">
 			<a href="/">Home</a>
 			<a href="/about">About</a>
