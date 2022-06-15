@@ -1,10 +1,14 @@
 <script lang="ts" context="module">
-	/** @type {import('@sveltejs/kit').Load} */
-	export async function load({ fetch, params }: any) {
+	import type { LoadEvent } from '@sveltejs/kit';
+	import type { Guide } from './[id].json';
+
+	// /** @type {import('@sveltejs/kit').Load} */
+	export async function load({ fetch, params }: LoadEvent) {
 		// await new Promise((resolve) => setTimeout(resolve, 1000));
-		const id = params.id;
-		const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-		const guide = await res.json();
+		const id: string = params.id;
+		// const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+		const res = await fetch(`/guides/${id}.json`);
+		const { guide } = await res.json();
 
 		if (res.ok) {
 			return {
@@ -24,7 +28,7 @@
 </script>
 
 <script lang="ts">
-	export let guide: any;
+	export let guide: Guide;
 </script>
 
 <div class="guide">
